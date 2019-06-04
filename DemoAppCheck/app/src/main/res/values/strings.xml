@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DemoAppCheck</string>
+    <string name="titleService">Dịch Vụ Tiện Ích</string>
+    <string name="promotionTitle"><![CDATA[Ưu đãi & hợp tác]]></string>
+    <string name="promotionContent">Các ưu đãi cho chủ thẻ ngân hàng</string>
+</resources>

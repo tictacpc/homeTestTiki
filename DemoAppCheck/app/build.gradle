@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.ext.appCompileSdkVersion
+    buildToolsVersion project.ext.appBuildToolsVersion
+    defaultConfig {
+        applicationId "com.chaunguyen.myapplication"
+        minSdkVersion project.ext.appMinSdkVersion
+        targetSdkVersion project.ext.appTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+        def API_KEY_HOT_VALUE = "\"https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json\""
+
+        debug{
+            buildConfigField "String", "API_KEY_HOT", API_KEY_HOT_VALUE
+            minifyEnabled false
+            debuggable true
+        }
+        release {
+            buildConfigField "String", "API_KEY_HOT", API_KEY_HOT_VALUE
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$project.ext.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$project.ext.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$project.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$project.ext.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$project.ext.supportContraintLayout"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //rxJava, rxAndroid for reactive programming
+    implementation "io.reactivex.rxjava2:rxandroid:$project.ext.appRxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$project.ext.appRxJava"
+    //retrofit 2 to get client rest api easier
+    implementation "com.squareup.retrofit2:retrofit:$project.ext.appRetrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$project.ext.appRetrofitConverterGson"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.ext.appRetrofitRxJava"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.ext.appOkHttpLogging"
+
+}
