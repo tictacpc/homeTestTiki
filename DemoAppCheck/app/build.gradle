@@ -39,6 +39,7 @@ dependencies {
     implementation "com.android.support:support-v4:$project.ext.supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$project.ext.supportLibraryVersion"
     implementation "com.android.support:recyclerview-v7:$project.ext.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$project.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$project.ext.supportContraintLayout"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -52,5 +53,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$project.ext.appRetrofitConverterGson"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$project.ext.appRetrofitRxJava"
     implementation "com.squareup.okhttp3:logging-interceptor:$project.ext.appOkHttpLogging"
+    //butter knife lib to support field and method binding
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
 }

@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textSize">@dimen/fontLarge</item>
+
+    </style>
+
+    <style name="TextTitleH1">
+        <item name="android:textSize">@dimen/fontLargeX</item>
+
+    </style>
 </resources>

@@ -3,4 +3,11 @@
     <string name="titleService">Dịch Vụ Tiện Ích</string>
     <string name="promotionTitle"><![CDATA[Ưu đãi & hợp tác]]></string>
     <string name="promotionContent">Các ưu đãi cho chủ thẻ ngân hàng</string>
+    <string name="titleHotKey">Từ khoá hot</string>
+    <string name="titleSignUpLogin">Đăng nhập để trải nghiệm tốt nhất</string>
+    <string name="btnRegister">Đăng ký</string>
+    <string name="titleDeal">Tiki deal</string>
+    <string name="serviceAir">Vé máy bay</string>
+    <string name="serviceProtect">Mua bảo hiểm online</string>
+    <string name="serviceCard">Mua thẻ điện thoại</string>
 </resources>

@@ -3,9 +3,12 @@ package com.chaunguyen.myapplication.presentation.main;
 import android.text.TextUtils;
 
 import com.chaunguyen.myapplication.App;
+import com.chaunguyen.myapplication.R;
 import com.chaunguyen.myapplication.common.constant.ErrCode;
+import com.chaunguyen.myapplication.domain.model.ServiceItem;
 import com.chaunguyen.myapplication.domain.usecases.GetHotKey;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -35,6 +38,16 @@ public class MainPresenter implements Main.Presenter {
     public void detach() {
         dispose.dispose();
         view = null;
+    }
+
+    @Override
+    public List<ServiceItem> getListService() {
+        ArrayList<ServiceItem> arr = new ArrayList<>();
+        arr.add(new ServiceItem(R.drawable.ic_utils_air_ticket, App.getInstance().getString(R.string.serviceAir)));
+        arr.add(new ServiceItem(R.drawable.ic_utils_protect, App.getInstance().getString(R.string.serviceProtect)));
+        arr.add(new ServiceItem(R.drawable.ic_utils_card_number, App.getInstance().getString(R.string.serviceCard)));
+        arr.add(new ServiceItem(R.drawable.ic_utils_air_ticket, App.getInstance().getString(R.string.serviceAir)));
+        return arr;
     }
 
     @Override
