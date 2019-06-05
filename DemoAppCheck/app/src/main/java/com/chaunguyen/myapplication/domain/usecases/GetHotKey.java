@@ -14,18 +14,18 @@ public class GetHotKey {
     public GetHotKey() {
     }
 
-    public Single<List<String>[]> listDataHotKey() {
+    public Single<List<String>> listDataHotKey() {
         return Single.create(e -> {
             HotKeyApi hotKeyApi = AppHttpClient.getInstance().getHotKeyApi();
-            Response<List<String>[]> requestTokenResponse = hotKeyApi.getListDataHotKey().execute();
+            Response<List<String>> requestTokenResponse = hotKeyApi.getListDataHotKey().execute();
 
             if (!requestTokenResponse.isSuccessful()) {
                 throw new Exception(requestTokenResponse.errorBody().string());
             }
 
-            List<String>[] listKey = requestTokenResponse.body();
+            List<String> listKey = requestTokenResponse.body();
 
-            if (listKey == null || listKey.length == 0) {
+            if (listKey == null || listKey.size() == 0) {
                 throw new Exception(ErrCode.API_ERROR.name());
             } else {
                 e.onSuccess(listKey);

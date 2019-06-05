@@ -1,4 +1,4 @@
-package com.chaunguyen.myapplication.presentation.main;
+package com.chaunguyen.myapplication.presentation.main.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -55,7 +55,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
         notifyDataSetChanged();
     }
 
-    void setListener(OnClickItemServiceListener listener) {
+    public void setListener(OnClickItemServiceListener listener) {
         this.listener = listener;
     }
 

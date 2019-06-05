@@ -5,12 +5,15 @@ import android.text.TextUtils;
 import com.chaunguyen.myapplication.App;
 import com.chaunguyen.myapplication.R;
 import com.chaunguyen.myapplication.common.constant.ErrCode;
+import com.chaunguyen.myapplication.domain.model.HotKeyItemDTO;
 import com.chaunguyen.myapplication.domain.model.ServiceItem;
 import com.chaunguyen.myapplication.domain.usecases.GetHotKey;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
@@ -21,11 +24,13 @@ public class MainPresenter implements Main.Presenter {
     private CompositeDisposable dispose;
     private Main.View view;
     private GetHotKey apiHotKey;
+    private int[] androidColors;
 
     public MainPresenter() {
 
+        dispose = new CompositeDisposable();
         apiHotKey = new GetHotKey();
-
+        androidColors = App.getInstance().getResources().getIntArray(R.array.androidcolors);
 
     }
 
@@ -59,6 +64,14 @@ public class MainPresenter implements Main.Presenter {
         view.showProgressDialog();
         dispose.add(
                 apiHotKey.listDataHotKey()
+                        .flatMap(hotKeys ->{
+                            List<HotKeyItemDTO> arr = new ArrayList<>();
+                            for (String content : hotKeys) {
+                                int randomColor = androidColors[new Random().nextInt(androidColors.length)];
+                                arr.add(new HotKeyItemDTO(randomColor, content));
+                            }
+                            return Single.just(arr);
+                        })
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(new GetListHotKeyObserver())
@@ -66,12 +79,12 @@ public class MainPresenter implements Main.Presenter {
 
     }
 
-    private final class GetListHotKeyObserver extends DisposableSingleObserver<List<String>[]> {
+    private final class GetListHotKeyObserver extends DisposableSingleObserver<List<HotKeyItemDTO>> {
         @Override
-        public void onSuccess(List<String>[] listHotKey) {
+        public void onSuccess(List<HotKeyItemDTO> listHotKey) {
             if (view == null) return;
             view.hideProgressDialog();
-
+            view.loadHotKeys(listHotKey);
             dispose();
         }
 

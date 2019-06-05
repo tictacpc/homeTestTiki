@@ -8,5 +8,5 @@ import retrofit2.http.GET;
 public interface HotKeyApi {
 
     @GET(".")
-    Call<List<String>[]> getListDataHotKey();
+    Call<List<String>> getListDataHotKey();
 }
