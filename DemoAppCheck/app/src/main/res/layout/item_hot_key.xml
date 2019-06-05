@@ -4,26 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_root"
     android:layout_width="wrap_content"
-    android:layout_height="94dp"
+    android:layout_height="84dp"
     android:layout_marginEnd="@dimen/sizeSmallest"
+    android:maxWidth="200dp"
     android:orientation="vertical"
     app:cardBackgroundColor="@color/colorPrimary"
     app:cardCornerRadius="8dp"
     app:cardUseCompatPadding="true">
 
-
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tv_key"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:ellipsize="end"
         android:gravity="center"
         android:maxWidth="250dp"
         android:maxLines="2"
         android:padding="@dimen/sizeSmall"
+        android:paddingTop="@dimen/sizeSmallest"
+        android:paddingBottom="@dimen/sizeSmallest"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/fontLarge"
-        tools:text="Vé máy " />
+        android:textSize="@dimen/fontNormal"
+        tools:text="Nguyen \nNhat Anh" />
 
 </android.support.v7.widget.CardView>
 

@@ -3,6 +3,7 @@ package com.chaunguyen.myapplication.presentation.main;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.chaunguyen.myapplication.R;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements Main.View,
         ServiceAdapter.OnClickItemServiceListener,
@@ -78,6 +80,12 @@ public class MainActivity extends BaseActivity implements Main.View,
     @Override
     public void loadHotKeys(List<HotKeyItemDTO> listHotKey) {
         hotKeyAdapter.setData(listHotKey);
+    }
+
+
+    @OnClick(R.id.btnLogin)
+    public void onCLickLogin(View view){
+        Toast.makeText(this, "Clicked Login", Toast.LENGTH_SHORT).show();
     }
 
     @Override

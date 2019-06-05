@@ -3,10 +3,12 @@ package com.chaunguyen.myapplication.domain.usecases;
 import com.chaunguyen.myapplication.common.constant.ErrCode;
 import com.chaunguyen.myapplication.data.restapi.HotKeyApi;
 import com.chaunguyen.myapplication.data.retro2client.AppHttpClient;
+import com.google.gson.JsonObject;
 
 import java.util.List;
 
 import io.reactivex.Single;
+import okhttp3.ResponseBody;
 import retrofit2.Response;
 
 public class GetHotKey {

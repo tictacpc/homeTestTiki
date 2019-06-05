@@ -10,4 +10,5 @@
     <string name="serviceAir">Vé máy bay</string>
     <string name="serviceProtect">Mua bảo hiểm online</string>
     <string name="serviceCard">Mua thẻ điện thoại</string>
+    <string name="btnLogin">Đăng Nhập</string>
 </resources>

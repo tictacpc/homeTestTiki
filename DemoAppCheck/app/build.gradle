@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
 
-        def API_KEY_HOT_VALUE = "\"https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json\""
+        def API_KEY_HOT_VALUE = "\"https://raw.githubusercontent.com/tikivn/\""
 
         debug{
             buildConfigField "String", "API_KEY_HOT", API_KEY_HOT_VALUE

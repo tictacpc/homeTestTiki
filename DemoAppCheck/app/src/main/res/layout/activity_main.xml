@@ -132,13 +132,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
             android:layout_marginTop="@dimen/sizeSmall"
             android:background="@android:color/white"
             android:orientation="vertical"
             android:paddingStart="@dimen/sizeSmall"
-            android:paddingEnd="@dimen/sizeSmallest"
-            android:paddingBottom="@dimen/sizeSmallest">
+            android:paddingEnd="@dimen/sizeSmallest">
 
             <TextView
                 style="@style/TextTitle"
@@ -165,7 +164,7 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/sizeSmall"
+            android:layout_marginTop="@dimen/sizeSmallest"
             android:background="@android:color/white"
             android:orientation="vertical"
             android:paddingStart="@dimen/sizeSmall"
@@ -179,7 +178,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="sans-serif-light"
-                android:paddingTop="@dimen/sizeSmall"
                 android:paddingBottom="@dimen/sizeSmall"
                 android:text="@string/titleSignUpLogin"
                 android:textColor="@android:color/black"
@@ -220,7 +218,7 @@
                 android:layout_height="55dp"
                 android:layout_marginStart="@dimen/sizeSmall"
                 android:background="@drawable/bg_button_login"
-                android:text="@string/btnRegister"
+                android:text="@string/btnLogin"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/fontLarge"

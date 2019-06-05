@@ -12,6 +12,15 @@
         <item>@color/darkgreen</item>
         <item>@color/darkorange</item>
         <item>@color/darkred</item>
+        <item>@color/darkred_2</item>
+        <item>@color/darkred_3</item>
+        <item>@color/darkred_4</item>
+        <item>@color/darkred_5</item>
+        <item>@color/darkred_6</item>
+        <item>@color/darkred_7</item>
+        <item>@color/darkred_8</item>
+        <item>@color/darkred_9</item>
+        <item>@color/darkred_10</item>
     </integer-array>
 
 </resources>
