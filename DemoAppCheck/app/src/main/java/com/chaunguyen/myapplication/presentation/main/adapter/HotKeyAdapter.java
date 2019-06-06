@@ -69,11 +69,11 @@ public class HotKeyAdapter extends RecyclerView.Adapter<HotKeyAdapter.HotKeyView
         HotKeyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(view -> {
-                if (listener != null) {
-                    listener.onItemHotKeyClick(tv.getText().toString());
-                }
-            });
+//            itemView.setOnClickListener(view -> {
+//                if (listener != null) {
+//                    listener.onItemHotKeyClick(tv.getText().toString());
+//                }
+//            });
         }
 
         public void setBackgroundColor(int colorId){
