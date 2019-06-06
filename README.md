@@ -1,4 +1,4 @@
 # homeTestTiki
-This is project demo home test. It work on estimate 2 days
+This is project demo for home test. 
 
 ![](https://github.com/tictacpc/homeTestTiki/blob/master/demoApp.gif)
