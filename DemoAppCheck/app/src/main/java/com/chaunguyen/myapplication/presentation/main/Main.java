@@ -25,6 +25,8 @@ public interface Main {
         void listHotKey();
 
         List<ServiceItem> getListService();
+
+        List<String> getListCategory();
     }
 
 }

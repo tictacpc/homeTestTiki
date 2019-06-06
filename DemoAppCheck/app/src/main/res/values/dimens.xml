@@ -7,4 +7,5 @@
     <dimen name="sizeSmallest">8dp</dimen>
     <dimen name="sizeSmall">16dp</dimen>
     <dimen name="sizeMedium">24dp</dimen>
+    <dimen name="sizeLarge">32dp</dimen>
 </resources>

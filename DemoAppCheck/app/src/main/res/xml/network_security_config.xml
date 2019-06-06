@@ -1,0 +1,19 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">raw.githubusercontent.com</domain>
+        <pin-set >
+            <pin digest="SHA-256">sm6xYAA3V3PtiyWIX6G/FY2kgHCRzR1k9XndcF5A0mg=</pin>
+            <pin digest="SHA-256">k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=</pin>
+            <pin digest="SHA-256">WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>

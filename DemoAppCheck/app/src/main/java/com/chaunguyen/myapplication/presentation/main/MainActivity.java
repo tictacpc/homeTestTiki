@@ -10,6 +10,7 @@ import com.chaunguyen.myapplication.R;
 import com.chaunguyen.myapplication.common.constant.ErrCode;
 import com.chaunguyen.myapplication.domain.model.HotKeyItemDTO;
 import com.chaunguyen.myapplication.presentation.base.BaseActivity;
+import com.chaunguyen.myapplication.presentation.main.adapter.CategoryAdapter;
 import com.chaunguyen.myapplication.presentation.main.adapter.HotKeyAdapter;
 import com.chaunguyen.myapplication.presentation.main.adapter.ServiceAdapter;
 
@@ -31,6 +32,7 @@ public class MainActivity extends BaseActivity implements Main.View,
     RecyclerView rcvHotKey;
 
     private MainPresenter presenter;
+    private CategoryAdapter categoryAdapter;
     private ServiceAdapter serviceAdapter;
     private HotKeyAdapter hotKeyAdapter;
 
@@ -44,6 +46,12 @@ public class MainActivity extends BaseActivity implements Main.View,
         presenter.attach(this);
 
         //<editor-fold desc="Setup View">
+        rcvCategory.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
+        categoryAdapter = new CategoryAdapter();
+        rcvCategory.setAdapter(categoryAdapter);
+        categoryAdapter.setCategory(presenter.getListCategory());
+
         rcvService.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false));
         serviceAdapter = new ServiceAdapter();

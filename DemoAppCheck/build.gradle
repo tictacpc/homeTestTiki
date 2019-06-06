@@ -34,9 +34,9 @@ allprojects {
         appRxAndroid = "2.0.1"
         appRxJava = "2.1.0"
 
-        appRetrofit = "2.2.0"
-        appRetrofitConverterGson = "2.2.0"
-        appRetrofitRxJava = "2.2.0"
+        appRetrofit = "2.5.0"
+        appRetrofitConverterGson = "2.5.0"
+        appRetrofitRxJava = "2.5.0"
 
         appOkHttpLogging = "3.6.0"
     }

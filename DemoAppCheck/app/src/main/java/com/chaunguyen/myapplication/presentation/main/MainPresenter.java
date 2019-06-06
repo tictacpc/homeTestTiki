@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import com.chaunguyen.myapplication.App;
 import com.chaunguyen.myapplication.R;
 import com.chaunguyen.myapplication.common.constant.ErrCode;
+import com.chaunguyen.myapplication.common.logic.StringUtils;
 import com.chaunguyen.myapplication.domain.model.HotKeyItemDTO;
 import com.chaunguyen.myapplication.domain.model.ServiceItem;
 import com.chaunguyen.myapplication.domain.usecases.GetHotKey;
@@ -64,6 +65,33 @@ public class MainPresenter implements Main.Presenter {
         view.showProgressDialog();
         dispose.add(
                 apiHotKey.listDataHotKey()
+                        .flatMap(listData -> {
+
+                            List<String> arrNewLine = new ArrayList<>();
+
+                            for (String data : listData) {
+                                String result;
+                                if (data.contains(" ")) {
+
+                                    String[] noSpace = data.split(" ");
+                                    if (noSpace.length == 1) {
+                                        result = noSpace[0];
+
+                                    } else if (noSpace.length == 2) {
+                                        result = noSpace[0] + "\n" + noSpace[1];
+
+                                    } else {
+                                        //- more 2 space
+                                        result = StringUtils.handleSetNewLine(noSpace);
+                                    }
+                                } else {
+                                    result = data;
+                                }
+                                arrNewLine.add(result);
+                            }
+
+                            return Single.just(arrNewLine);
+                        })
                         .flatMap(hotKeys ->{
                             List<HotKeyItemDTO> arr = new ArrayList<>();
                             for (String content : hotKeys) {
@@ -98,4 +126,13 @@ public class MainPresenter implements Main.Presenter {
         }
     }
 
+    @Override
+    public List<String> getListCategory() {
+        List<String> list = new ArrayList<>();
+        list.add("Mẹ & Bé");
+        list.add("Sức khoẻ");
+        list.add("Dụng ");
+        list.add("Dịch vụ");
+        return list;
+    }
 }
